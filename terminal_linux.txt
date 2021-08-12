@@ -1,0 +1,88 @@
+Выполнение заданий в терминале Linux:
+
+1) Посмотреть где я:
+	pwd
+
+2) Создать папку:
+	1. mkdir dir1 (от текущей директории) 
+	2. mkdir /c/Users/user/Desktop/testing/dz/dir1 (от корневой директории)  
+
+3) Зайти в папку:
+	1. cd dir1 (от текущей директории)
+	2. cd /c/Users/user/Desktop/testing/dz/dir1 (от корневой директории)
+
+4) Создать 3 папки:
+	1. mkdir dir2 dir3 dir4 (от текущей директории) 
+	2. mkdir /c/Users/user/Desktop/testing/dz/dir2 /c/Users/user/Desktop/testing/dz/dir3 /c/Users/user/Desktop/testing/dz/dir4 (от корневой директории) 
+
+5) Зайти в любую папку:
+	1. cd dir1 (от текущей директории) 
+	2. cd /c/Users/user/Desktop/testing/dz/dir1 (от корневой директории) 
+
+6) Создать 5 файлов (3 txt, 2 json):
+	touch file1.txt file2.txt file3.txt file4.json file5.json (от текущей директории)
+
+7) Создать 3 папки:
+	mkdir dir1.1 dir1.2 dir1.3 (от текущей директории)
+
+8) Вывести список содержимого папки:
+	1. ls -la (для текущей директории) 
+	2. ls -la /c/Users/user/Desktop/testing/dz (для какой-либо определенной директории указывается путь до него)
+
+9-11 с использованием vim:
+9.1) открыть любой txt файл: vim file1.txt
+10.1) написать туда что-нибудь, любой текст: i <набор текста> Esc (или Ctrl+C)
+11.1) сохранить и выйти: :wq
+
+9-11 с использованием nano:
+9.2) открыть любой txt файл: nano file1.txt
+10.2) написать туда что-нибудь, любой текст: <набор текста> 
+11.2) сохранить и выйти: Ctrl+X -> Save modified buffer? Y (yes) -> File Name to Write: file1.txt -> Enter
+
+12) Выйти из папки на уровень выше:
+	cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку:
+	mv file1.txt file2.txt dir1/
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку:
+	cp file3.txt file4.json dir1/
+
+15) Найти файл по имени:
+	1. find -name "file1.txt" (в текущей директории) 
+	2. find /c/Users/user/Desktop/testing/dz -name "file1.txt" (от корневой директории)
+
+16) просмотреть содержимое (команда grep) изучите как она работает:
+	grep "комары" file1.txt
+
+17) вывести несколько первых строк из текстового файла:
+	head -n 2 file1.txt
+
+18) вывести несколько последних строк из текстового файла:
+	tail -n 2 file1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает:
+	less file2.txt
+
+20) вывести дату и время:
+	1. date (текущая дата и время) 
+	2. date --date="yesterday" +%F (вчерашняя дата).
+=========
+
+Задание *
+
+1) Отправить http запрос на сервер https://api.quarantine.country/api/v1/regions: 
+	1. curl https://api.quarantine.country/api/v1/regions (стандартный вывод) 
+	2. curl -o file3.txt https://api.quarantine.country/api/v1/regions (запрос с записью результата в файл)
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13:
+
+	#! /bin/bash
+
+	cd test_script
+	mkdir dir1 dir2 dir3
+	cd dir1
+	touch file1.txt file2.txt file3.txt file4.json file5.json
+	mkdir dir1_1 dir1_2 dir1_3
+	ls -la
+	mv file1.txt file2.txt dir1_
