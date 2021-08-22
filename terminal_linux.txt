@@ -86,3 +86,6 @@
 	mkdir dir1_1 dir1_2 dir1_3
 	ls -la
 	mv file1.txt file2.txt dir1_
+
+Сохраняем написанный скрипт и запускаем с помощью команды:
+./test_script
